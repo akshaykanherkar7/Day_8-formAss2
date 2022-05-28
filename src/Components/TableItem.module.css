@@ -1,0 +1,24 @@
+.brdr{
+    border: 1px solid gray;
+    border-collapse: collapse;
+    margin: auto; 
+    margin-top: 50px;
+}
+
+.brdr tr{
+    border: 1px solid gray;
+    border-collapse: collapse; 
+}
+
+.brdr td{
+    border: 1px solid gray;
+    border-collapse: collapse; 
+    width: 200px;
+    height: 35px;
+}
+
+.brdr th{
+    border: 1px solid gray;
+    border-collapse: collapse;
+    font-size: 22px; 
+}

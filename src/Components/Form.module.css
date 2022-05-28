@@ -1,0 +1,12 @@
+.formbody{
+    border: 1px solid red;
+    width: 50%;
+    margin: auto;
+    height: 400px   ;
+}
+
+.formbody label{
+   text-align: start;
+   border: 1px solid red;
+   margin-right: 30px;
+}

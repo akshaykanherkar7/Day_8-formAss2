@@ -1,0 +1,75 @@
+{
+  "form": [
+    {
+      "name": "AKSHAY HANUMANT KANHERKAR",
+      "age": "26",
+      "address": "A.P. KHANOTA",
+      "department": "it",
+      "salary": "25555",
+      "prof_url": "",
+      "mar_status": true,
+      "id": 4
+    },
+    {
+      "name": "AKSHAY HANUMANT KANHERKAR",
+      "age": "26",
+      "address": "A.P. KHANOTA",
+      "department": "it",
+      "salary": "90000",
+      "prof_url": "",
+      "mar_status": true,
+      "id": 5
+    },
+    {
+      "name": "Manish",
+      "age": "56",
+      "address": "bihar",
+      "department": "bpo",
+      "salary": "56660",
+      "prof_url": "",
+      "mar_status": true,
+      "id": 6
+    },
+    {
+      "name": "Gagan",
+      "age": "15",
+      "address": "KGF",
+      "department": "network",
+      "salary": "5466464",
+      "prof_url": "",
+      "mar_status": true,
+      "id": 7
+    },
+    {
+      "name": "Chachaji",
+      "age": "101",
+      "address": "lkaa",
+      "department": "network",
+      "salary": "646464566",
+      "prof_url": "",
+      "id": 9
+    },
+    {
+      "name": "Ganesh",
+      "age": "26",
+      "address": "Pune",
+      "department": "it",
+      "salary": "900000",
+      "prof_url": "",
+      "mar_status": true,
+      "photo": "C:\\fakepath\\Screenshot (65).png",
+      "id": 10
+    },
+    {
+      "name": "manish64",
+      "age": "26",
+      "address": "bihar",
+      "department": "it",
+      "salary": "120000",
+      "prof_url": "",
+      "mar_status": true,
+      "photo": "C:\\fakepath\\AK Resume Png.png",
+      "id": 11
+    }
+  ]
+}
