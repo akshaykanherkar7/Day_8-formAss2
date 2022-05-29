@@ -1,12 +1,14 @@
 .formbody{
-    border: 1px solid red;
-    width: 50%;
+    /* border: 1px solid red; */
+    width: 40%;
     margin: auto;
-    height: 400px   ;
+    height: 520px;
+    padding: 25px;
+    background-color: rgb(145, 208, 228);
+    border-radius: 10px;
 }
 
 .formbody label{
    text-align: start;
-   border: 1px solid red;
    margin-right: 30px;
 }
