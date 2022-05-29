@@ -22,7 +22,11 @@ const Form = () => {
   };
 
   const handleDelete = (id) => {
-    setData(data.filter((el) => el.id !== id));
+    // setData(data.filter((el) => el.id !== id));
+    // axios.delete(`http://localhost:3008/form`,id);
+    // setData(data);
+    axios.delete(`http://localhost:3008/form/${id}`);
+    window.location.reload();
   };
 
   const handleSubmit = (e) => {
