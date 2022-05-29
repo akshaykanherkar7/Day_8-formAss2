@@ -21,13 +21,14 @@
       "id": 5
     },
     {
-      "name": "Chachaji",
-      "age": "101",
-      "address": "lkaa",
-      "department": "network",
-      "salary": "646464566",
-      "prof_url": "",
-      "id": 9
+      "name": "Mahesh",
+      "age": "26",
+      "address": "Kh",
+      "department": "it",
+      "salary": "52000",
+      "mar_status": true,
+      "photo": "asdasd",
+      "id": 6
     }
   ]
 }

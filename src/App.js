@@ -1,13 +1,10 @@
-import { useState } from "react";
 import "./App.css";
 import Form from "./Components/Form";
-import dbdata from "./data.json"
 
 function App() {
-  const [jsdata,setJsdata] = useState(dbdata);
   return (
     <div className="App">
-    <Form dbdata={jsdata} setJsdata={setJsdata}/>
+      <Form />
     </div>
   );
 }

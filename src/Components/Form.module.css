@@ -12,3 +12,15 @@
    text-align: start;
    margin-right: 30px;
 }
+.pageDiv{
+    width: 25%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+.pageDiv button{
+    border: 1px solid gray;
+    width: 100%;
+    margin: auto;
+}

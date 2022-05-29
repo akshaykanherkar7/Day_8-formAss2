@@ -1,26 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Table from "./Table";
 import styles from "./Form.module.css";
-import {
-  FormControl,
-  FormLabel,
-  Button,
-  ButtonGroup,
-  Input,
-} from "@chakra-ui/react";
+import axios from "axios";
+import { FormControl, FormLabel, Button, Input } from "@chakra-ui/react";
 
-// name: "",
-//     age: null,
-//     address: "",
-//     department: "",
-//     salary: null,
-//     prof_url: "",
-
-const Form = ({ dbdata }) => {
+const Form = () => {
   const [form, setForm] = useState({});
-  //   console.log(dbdata.form);
-
   const [data, setData] = useState([]);
+  const [sort, setSort] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalCount, setTotalCount] = useState();
 
   const handleonChange = (e) => {
     let { type, name, value, checked } = e.target;
@@ -32,31 +21,28 @@ const Form = ({ dbdata }) => {
     }
   };
 
+  const handleDelete = (id) => {
+    setData(data.filter((el) => el.id !== id));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3008/form", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(form),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setData([...data, res]);
-      });
-    window.location.reload();
+    axios.post("http://localhost:3008/form", form).then((res) => {
+      setData([...data, res.data]);
+      console.log(res.data);
+    });
   };
 
   useEffect(() => {
-    //run last END me
-    fetch("http://localhost:3008/form")
-      .then((res) => res.json())
+    axios
+      .get(
+        `http://localhost:3008/form?_sort=salary&_order=${sort}&_page=${page}&_limit=5`
+      )
       .then((res) => {
-        setData(res);
-        // console.log(res);
+        setData(res.data);
+        setTotalCount(Number(res.headers["x-total-count"]));
       });
-  }, []);
+  }, [sort, page]);
 
   return (
     <div>
@@ -153,7 +139,7 @@ const Form = ({ dbdata }) => {
             <FormLabel>Profile Photo</FormLabel>
             <Input
               accept="image/*"
-              type="file"
+              type="url"
               name="photo"
               file={form.photo}
               onChange={handleonChange}
@@ -169,8 +155,33 @@ const Form = ({ dbdata }) => {
           Submit
         </Button>
       </form>
+      <select onChange={(e) => setSort(e.target.value)}>
+        <option value="">Sort</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Decending</option>
+      </select>
       <div>
-        <Table dbdata={dbdata.form}></Table>
+        <Table handleDelete={handleDelete} dbdata={data}></Table>
+      </div>
+      <div className={styles.pageDiv}>
+        <button
+          disabled={page <= 1}
+          onClick={() => setPage(page - 1)}
+          style={
+            page <= 1
+              ? { backgroundColor: "lightgray", color: "gray" }
+              : { backgroundColor: "teal", color: "white" }
+          }
+        >{`<`}</button>
+        <button
+          disabled={totalCount < page * 5}
+          onClick={() => setPage(page + 1)}
+          style={
+            totalCount < page * 5
+              ? { backgroundColor: "lightgray", color: "gray" }
+              : { backgroundColor: "teal", color: "white" }
+          }
+        >{`>`}</button>
       </div>
     </div>
   );

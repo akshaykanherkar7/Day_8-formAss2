@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TableItem.module.css";
 
-const TableItem = ({ dbdata }) => {
+const TableItem = ({ dbdata, handleDelete }) => {
   return (
     <div>
       <table className={styles.brdr}>
@@ -26,7 +26,19 @@ const TableItem = ({ dbdata }) => {
               <td>{el.salary}</td>
               <td>{el.mar_status ? "Yes" : "No"}</td>
               <td>
-                <img src={el.prof_url} alt="profpic" />
+                <img
+                  src={el.photo}
+                  alt="profpic"
+                  style={{ width: "200px", height: "100px" }}
+                />
+              </td>
+              <td>
+                <button onClick={() => handleDelete(el.id)}>
+                  <i
+                    style={{ fontSize: "50px" }}
+                    class="fa-solid fa-delete-left"
+                  ></i>
+                </button>
               </td>
             </tr>
           ))}

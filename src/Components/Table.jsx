@@ -1,10 +1,10 @@
 import React from "react";
 import TableItem from "./TableItem";
 
-const Table = ({ dbdata }) => {
+const Table = ({ dbdata ,handleDelete}) => {
   return (
     <div>
-      <TableItem dbdata={dbdata}></TableItem>
+      <TableItem dbdata={dbdata} handleDelete={handleDelete}></TableItem>
     </div>
   );
 };
